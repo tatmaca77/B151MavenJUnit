@@ -36,7 +36,7 @@ public class C01_Maven_IlkTest {
         System.out.println(sonucYazisi.getText());
 
         String[] sonucSayisi = sonucYazisi.getText().split(" ");
-        System.out.println(sonucSayisi[2]);
+        System.out.println(sonucSayisi[2]); // Index 0'dan baslar.
 
         WebElement ilkUrun = driver.findElement(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
         ilkUrun.click();
@@ -47,7 +47,9 @@ public class C01_Maven_IlkTest {
         List<WebElement> sayfaBasliklari = driver.findElements(By.xpath("//h1 | //h2 "));
         /** driver.findElements(By.xpath("(//*[@class='nav-a  '])[1] | (//*[@class='nav-a  '])[2]")) */
         // Bu sekilde de index ile ve bu güzel xpath kullanimi ile alabiliriz.
-        sayfaBasliklari.forEach(t -> System.out.println(t.getText()));
+
+        sayfaBasliklari.forEach(t -> System.out.println(t.getText())); // Console'a yazdirmak icin Lambda kullandik.
+
         /** Bu "XPath" kullanimi cok iyi bir yöntemdir. Bu sekilde sayfadaki bütün basliklari locate ederiz.
             Ve sonuc fazla oldugu icin onu bir "List" icine atmis olduk.
             Sonrasinda ekrana yazdiramk icin "Lambda" kullanrak yazdirmis olduk.
