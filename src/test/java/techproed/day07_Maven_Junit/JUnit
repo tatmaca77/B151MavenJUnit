@@ -1,0 +1,34 @@
+
+
+                   JUnit
+
+❖ Java ile en temel framework JUNit ile oluşturulabilir.
+❖ Developerlar da unit testleri calistirmak icin kullanirlar.
+❖ Biz testlerimizi yapmak icin JUnit'in ileri sürümü
+olduğundan TestNG framework oluşturup kullanacagiz.
+❖ Junit maven projesi uzerinde calistigindan https://
+mvnrepository.com/ sitesinden dependency’leri
+projemize ekleriz.
+❖ Test’lerimizi yaparken main method, if-else gibi
+java kod bloklarini kullanmak yerine Junit
+annotationlarini ve method’larine kullanabiliriz.
+❖ Son framework olarak kuracagimiz Cucumber framework’da da Junit
+kullanacagiz
+
+
+                           Annotations
+❖ Selenium’da kodlarimizi yazarken “@” işareti ile baslayan notasyonlar kullaniriz.
+❖ Java Annotationlar ile derleyiciye (Compiler) talimatlar verebiliriz.
+❖ Annotation, bir veri hakkında bilgi barındıran veriyi sağlayan basit bir yapıdır. Bu
+sağladığı bilgiye de “metadata” denir.
+❖ Notasyonlar( Annotation) genellikle Java’da konfigürasyon amacıyla kullanılır.
+Kullanildigi bileşene ek özellikle katar. Bu bileşenler sınıf, metod, değişkenler, paket ya
+da parametreler olabilir. Bunların hepsinde notasyonları kullanabiliriz.
+
+                 En cok kullanilan Junit annotation’lari
+@Test
+@BeforeClass @AfterClass
+@Before , @After
+@Ignore
+
+

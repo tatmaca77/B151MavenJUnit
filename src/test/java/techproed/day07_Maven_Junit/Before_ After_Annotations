@@ -1,0 +1,16 @@
+
+
+
+                            @Before ve @After
+❖ Before notasyonu, her test method’undan önce çalışır. Örneğin bir sayfa ile test
+yapiyorsak
+ve her testten once o sayfaya gitmemiz gerekiyorsa @before kullanabiliriz.
+@before notasyanunun kullanildigi method’a genelde setup( ) ismi verilir.
+❖ After notasyonu, her test method’undan sonra çalışmaktadır. Örneğin test sirasinda
+kullandigimiz sayfanin kapatilmasi gibi.
+@after notasyanunun kullanildigi metoda genelde teardown() ismi verilir
+Not : Test method’u ve Test farkli yapilardir.
+Test dedigimizde tek bir method veya icinde bircok class ve package barindiran
+bir yapi olabilir. Regression test, smoke test vb..
+Test method’u ise @Test notasyonu kullanilarak olusturulan ve bagimsiz olarak
+calistirabilecegimiz en kucuk test yapisidir.

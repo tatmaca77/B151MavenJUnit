@@ -1,0 +1,16 @@
+
+
+
+                    @Test ve @Ignore
+❖ Junit ile Main Method kullanma donemini bitiriyoruz.
+❖ Junit Framework kullandigimizda yazdığımız test metodunun calismasi icin başına
+@Test
+notasyonu eklememiz yeterlidir.
+❖ @Test notasyonu eklemedigimiz metot test sırasında çalışıtırılmaz. Ancak cagrilirsa
+calisir.
+❖ Yazdığımız bazı test metotları henüz tamamlanmamış veya değişikliklere
+uğrayabileceğinden dolayı test sırasında çalıştırılmasını istemiyorsak @Ignore
+notasyonu eklememiz yeterlidir.
+❖ @Ignore notasyonun tanımlı olduğu metotlar test sırasında çalıştırılmayacaktır.
+Ayrıca istenilirse @Ignore(“açıklama”) şeklinde yazılarak metodun neden test
+edilmesini istemediğimizide yazabiliriz.

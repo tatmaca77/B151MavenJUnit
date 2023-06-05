@@ -1,0 +1,46 @@
+
+
+Bir projeyi gelistirmek kadar onu anlasilir kilmak, tekrar eden kodlardan kacinmak, updateleri
+tek
+merkezden kolayca yapabilmek ve projenin surdurulebilirligini saglamak (maintenance) da
+onemlidir.
+❖ Apache Maven bir yazılım proje yönetimi ve
+anlama aracıdır.
+❖ Maven, en iyi uygulamaların geliştirilmesi için
+güncel ilkeleri bir araya getirmeyi ve bir projeye
+bu yönde rehberlik etmeyi kolaylaştırmayı
+amaçlamaktadır.
+
+Maven geliştiricileri birçok ayrıntıdan
+korur.
+Proje nesne modeli (POM Project Object Model) konseptine
+dayalidir.
+
+
+https://maven.apache.org/
+
+Maven bir Java derleme aracıdır (build tool). Maven proje otomasyon ve yönetim
+aracıdır
+(automation and management tool).
+❖ Maven,konfigrasyon için pom.xml dosyasını
+kullanır. Bu dosya projenin insasi , raporlaması
+ve dokümantasyonu için gerekli bütün bilgileri
+içerir
+( dependencies , plugins )
+❖ Bir Maven projesine aşina olduğunuzda, tüm
+Maven projelerinin nasıl inşa edildiğini
+bilirsiniz. Bu, birçok projede gezinirken zaman
+kazandırır.
+
+
+
+
+                                Neden Maven?
+❖ Tekrarlanabilir derlemeler / yürütmeleri yapmak kolaylastrir.(Repeatable builds/
+executions. )
+❖ Proje yönetimini kolaylaştırır.
+❖ Maven, dependencylerle ilgili mevcut jar dosyalarını otomatik olarak indirir.
+❖ Birden fazla IDE (intelliJ, eclipse, vb.) ve araçlarla(tools) çalışır.
+❖ Open source
+❖ Geniş kullanıcı tabanı
+
