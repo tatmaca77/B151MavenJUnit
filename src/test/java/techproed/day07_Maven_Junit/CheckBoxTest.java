@@ -36,8 +36,8 @@ WebDriver driver;
     @Test
     public void test01() throws InterruptedException {
         driver.navigate().to("https://the-internet.herokuapp.com/checkboxes");
-        WebElement checkBox1 = driver.findElement(By.xpath("//input[@type='checkbox'][1]"));
-        WebElement checkBox2 = driver.findElement(By.xpath("//input[@type='checkbox'][2]"));
+        WebElement checkBox1 = driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
+        WebElement checkBox2 = driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
         Thread.sleep(2000);
         checkBox1.click();
         Thread.sleep(2000);
