@@ -60,14 +60,15 @@ public class C05_Assertions {
     public void test01() {
         driver.get("https://amazon.com");
         String actualTitle = driver.getTitle();
-        Assert.assertTrue(actualTitle.contains("Amazon"));  // Sayfa basligi Amazon kelimesini iceriyor mu diye baktik.
+        Assert.assertTrue(actualTitle.contains("Amazon"));
+        // Sayfa basligi Amazon kelimesini iceriyor mu diye baktik.
 
     }
 
     @Test
     public void test02() {
         driver.get("https://amazon.com");
-        WebElement logo = driver.findElement(By.id("nav-logo-sprites"));
+        WebElement logo = driver.findElement(By.xpath("//a[@id='nav-logo-sprites']"));
         Assert.assertTrue(logo.isDisplayed());
 
     }
@@ -87,6 +88,10 @@ public class C05_Assertions {
         //Assert.assertTrue(!actualTitle.contains("kitap"));
         Assert.assertFalse(actualTitle.contains("kitap"));
 
+    }
+
+    @Test @Ignore ("Bu Test Hazirda bekliyor. Suan da calistirilmayacaktir.")
+    public void ignore() {
     }
 
     @After
