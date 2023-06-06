@@ -54,11 +54,16 @@ public class C05_Assertions {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
+        /** Amazon'a gitme islemi her Test methodunda ortak oldugu icin Before icine atinca Testten önce
+            bu bölüm calisacagi icin ayri ayri Test methodlari icinde yazmama gerek yok. !!!!!
+         */
+        driver.get("https://amazon.com");
+
     }
 
     @Test
     public void test01() {
-        driver.get("https://amazon.com");
+        //driver.get("https://amazon.com");
         String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains("Amazon"));
         // Sayfa basligi Amazon kelimesini iceriyor mu diye baktik.
@@ -67,7 +72,7 @@ public class C05_Assertions {
 
     @Test
     public void test02() {
-        driver.get("https://amazon.com");
+        //driver.get("https://amazon.com");
         WebElement logo = driver.findElement(By.xpath("//a[@id='nav-logo-sprites']"));
         Assert.assertTrue(logo.isDisplayed());
 
@@ -75,7 +80,7 @@ public class C05_Assertions {
 
     @Test
     public void test03() {
-        driver.get("https://amazon.com");
+        //driver.get("https://amazon.com");
         WebElement aramaKutusu = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
         Assert.assertTrue(aramaKutusu.isEnabled());
 
@@ -83,7 +88,7 @@ public class C05_Assertions {
 
     @Test
     public void test04() {
-        driver.navigate().to("https://amazon.com");
+        //driver.navigate().to("https://amazon.com");
         String actualTitle = driver.getTitle();
         //Assert.assertTrue(!actualTitle.contains("kitap"));
         Assert.assertFalse(actualTitle.contains("kitap"));
