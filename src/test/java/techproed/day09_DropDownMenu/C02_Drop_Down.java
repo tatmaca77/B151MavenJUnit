@@ -101,7 +101,6 @@ Given kullanici https://testcenter.techproeducation.com/index.php?page=dropdown 
         for (WebElement w : eyaletler) {
             System.out.println(w.getText());  // Foreach ile de yazdirabiliriz.
         }
-
     }
 
     @Test
