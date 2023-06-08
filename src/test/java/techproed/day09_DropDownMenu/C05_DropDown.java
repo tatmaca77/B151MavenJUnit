@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
 import java.util.List;
 
-public class C02_Drop_Down {
+public class C05_DropDown {
 
     /**
       DROPDOWN --> Altbasliklarin oldugu acilir menü listesidir.
@@ -116,6 +116,7 @@ Given kullanici https://testcenter.techproeducation.com/index.php?page=dropdown 
         System.out.println("Secili olan Secenek : " + defaultOption); // Yazdirdik
         Assert.assertEquals("Select a State",defaultOption);// Assert ile kontrol ettik.
         Assert.assertTrue(defaultOption.contains("Select"));
+        
     }
 
     @After
