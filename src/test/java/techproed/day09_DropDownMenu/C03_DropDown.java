@@ -1,4 +1,4 @@
-package techproed.day09_DropDownDT;
+package techproed.day09_DropDownMenu;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -13,14 +13,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
 import java.util.List;
 
-public class C02_DropDown {
+public class C03_DropDown {
 
-    /**
-
-  -getFirstSelectedOption() ==> dropdown'daki en son sectigimiz option'u bize döndürür
-
-  -getOptions() ==> dropdown'daki tüm optionları bize dondurur.
-     */
 
     WebDriver driver;
 
@@ -34,7 +28,7 @@ public class C02_DropDown {
 
     @After
     public void tearDown() throws Exception {
-        // driver.close();
+        //driver.close();
     }
 
     @Test
@@ -43,40 +37,43 @@ public class C02_DropDown {
         // https://testcenter.techproeducation.com/index.php?page=dropdown sayfasına gidiniz
         driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
 
-        // Select a State Dropdown'undan "Arizona" seciniz
-        WebElement ddmSelectaState = driver.findElement(By.xpath("//select[@id='state']"));
+        // Programlama Dili Dropdown'undan "Java" seciniz
+        WebElement ddmProgramlamaDili = driver.findElement(By.xpath("//select[@name='Languages']"));
 
-        Select select = new Select(ddmSelectaState);
+        Select select = new Select(ddmProgramlamaDili);
 
-        //select.selectByValue("AZ");
-        select.selectByVisibleText("Arizona");
+        select.selectByVisibleText("Java");
 
-        // Select a State Dropdown'undan son secilen option'un "Arizona" oldugunu test ediniz
-
+        // Programlama Dili Dropdown'undan son secilen option'un "Java" oldugunu test ediniz
         WebElement sonSecilenOption = select.getFirstSelectedOption();
         String sonSecilenOptionStr = sonSecilenOption.getText();
 
-        Assert.assertEquals("Arizona",sonSecilenOptionStr);
+        Assert.assertEquals("Java",sonSecilenOptionStr);
 
-        // Select a State Dropdown'undaki tum optionları konsolda yazdırınız
+        // Programlama Dili Dropdown'undaki tum optionları konsolda yazdırınız
 
         List<WebElement> tumOptionlar = select.getOptions();
 
+        /*
         for (WebElement each:tumOptionlar) {
             System.out.println(each.getText());
         }
-
-        //tumOptionlar.stream().forEach(t-> System.out.println(t.getText()));
-
-/**
-        2.YOL
-
-        List<WebElement> tumOptionlar = driver.findElements(By.xpath("//select[@id='state']//option"));
-
+         */
         tumOptionlar.stream().forEach(t-> System.out.println(t.getText()));
 
-*/
+        System.out.println("********************************************");
+
+        // Sayfadaki tum Dropdown'lardaki tum optionları konsolda yazdırınız
+
+        List<WebElement> tumDropDownTumOptionlar = driver.findElements(By.tagName("option"));
+
+        for (WebElement each:tumDropDownTumOptionlar) {
+            System.out.println(each.getText());
+        }
+
+        // tumDropDownTumOptionlar.stream().forEach(t-> System.out.println(t.getText()));
 
     }
+
 
 }
