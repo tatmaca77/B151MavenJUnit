@@ -19,6 +19,11 @@ public class C01_ClassWork {
         ○ Search Box 'in erisilebilir oldugunu test edin(isEnabled())
         ○ wrongTitleTest => Sayfa basliginin "amazon" içermediğini doğrulayın
      */
+
+    /**
+       @Before ve @After kullnamayinca, onlar yerine Class kullaninca tek bir sayfa üzerinde islemler yapilir.
+       Eger kullanirsak her bir Test Cse icin ayri ayri sayfalar acilacak ve kapatilacakti.
+     */
     static WebDriver driver;
 
     @BeforeClass
@@ -38,6 +43,9 @@ public class C01_ClassWork {
         Assert.assertTrue(actualTitle.contains(expectedTitle));
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("iphone" + Keys.ENTER + Keys.CLEAR);
+        driver.navigate().back();
+
+        Util_Class.bekle(3);
 
      // Eger CLEAR yapmazsak aramalari yanyana yazar.
 
@@ -49,6 +57,8 @@ public class C01_ClassWork {
         WebElement image = driver.findElement(By.id("nav-logo-sprites"));
         Assert.assertTrue(image.isDisplayed());
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("samsung" + Keys.ENTER);
+        driver.navigate().back();
+        Util_Class.bekle(3);
     }
 
     @Test
@@ -57,6 +67,7 @@ public class C01_ClassWork {
         WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
         Assert.assertTrue(searchBox.isEnabled());
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("nokia" + Keys.ENTER);
+        driver.navigate().back();
     }
 
     @Test
@@ -69,6 +80,7 @@ public class C01_ClassWork {
 
     @AfterClass
     public static void tearDown() throws Exception {
+        Util_Class.bekle(3);
         driver.close();
     }
     // After koyarsam her test icin Web acilir sonra kapanir.

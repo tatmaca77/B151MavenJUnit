@@ -56,12 +56,14 @@ public class C04_DropDown {
 
         /** Seceneklerden 4 tane sectigimizi (verify) yani dogrulayalim. */
         Assert.assertEquals(4,options.getAllSelectedOptions().size());
-        // Secili olan 4 tan eoldugu icin expected 4 ve diger method bize tüm seceneklerin size sayisini verir.
+        // Secili olan 4 tane oldugu icin expected 4 ve diger method bize tüm seceneklerin size sayisini verir.
 
         System.out.println("*******************************");
 
         /** Sectigimiz seceneklerden ilkini yazdiralim. */
         System.out.println("Secilen seceneklerden ilki : " + options.getFirstSelectedOption().getText());
+
+
 
         /** Ilk secenegin Java oldugunu dogrulayalim (verify) */
         Assert.assertEquals("Java", options.getFirstSelectedOption().getText());

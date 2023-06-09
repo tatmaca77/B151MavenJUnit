@@ -44,10 +44,14 @@ public class DropDown_ClassWork {
         ddm.click();
         Thread.sleep(2000);
         options.selectByIndex(1);
+        WebElement selectedOption = options.getFirstSelectedOption();
+        System.out.println("Secilen Ilk Secenek : " + selectedOption.getText());
         ddm.click();
         Thread.sleep(2000);
-        //options.selectByValue("Option 2");
-        System.out.println(options.getOptions());
+        options.selectByValue("2");
+        selectedOption = options.getFirstSelectedOption();
+        System.out.println("Secilen 2. Secenek : " + selectedOption.getText());
+        options.getOptions().forEach(t-> System.out.println(t.getText()));
         ddm.click();
         Thread.sleep(2000);
         options.selectByVisibleText("Option 1");

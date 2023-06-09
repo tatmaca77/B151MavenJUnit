@@ -47,7 +47,6 @@ Given kullanici https://testcenter.techproeducation.com/index.php?page=dropdown 
 
  */
     static WebDriver driver;
-
     @BeforeClass
     public static void beforeClass() throws Exception {
         System.out.println("Diese Tests haben jetzt begonnen.");
@@ -112,11 +111,11 @@ Given kullanici https://testcenter.techproeducation.com/index.php?page=dropdown 
          */
         WebElement states = driver.findElement(By.xpath("//select[@id='state']"));
         Select options = new Select(states);
-        String defaultOption = options.getFirstSelectedOption().getText(); // Varsayilani String yaptik.
+        String defaultOption = options.getFirstSelectedOption().getText();//Varsayilani WebElemnti Stringe cevirdik.
         System.out.println("Secili olan Secenek : " + defaultOption); // Yazdirdik
         Assert.assertEquals("Select a State",defaultOption);// Assert ile kontrol ettik.
         Assert.assertTrue(defaultOption.contains("Select"));
-        
+
     }
 
     @After
