@@ -59,5 +59,18 @@ public class C03_WindowHandle extends TestBase {
         // linkedIn sayfasına geçiniz:
         driver.switchTo().window(linkedInWindowHandle);
         bekle(2);
+
+        /**
+        Eger Pencere degilde yeni sekme acsaydik Window tipini TAB olarak belirtmeliydik.
+         */
+        String gitHubWindowHandle = driver.getWindowHandle();
+        System.out.println("GitHub Window handle: " + gitHubWindowHandle);
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://github.com/tatmaca77");
+
+        bekle(3);
+
+        driver.switchTo().window(techproWindowHandle);
+        bekle(2);
     }
 }
