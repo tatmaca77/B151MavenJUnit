@@ -1,0 +1,8 @@
+
+***************** Alert nedir? ************************
+
+- Alert uyari veya bilgi mesaji iceren penceredir.
+
+* JS Alert ( JAVA Script Alert )
+   -driver'i switchTo() methodu ile alert() methodunu kullanarak gecis yapar,
+   -accept() veya dismiss() methodlari ile handle edebiliriz.
