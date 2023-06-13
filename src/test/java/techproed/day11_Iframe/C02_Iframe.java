@@ -54,7 +54,7 @@ public class C02_Iframe extends TestBase {
         bekle(2);
 
         //==>  Sayfadaki "Elemental Selenium" yazısının görünür olduğunu doğrulayınız.
-        driver.switchTo().defaultContent(); /// Yazi distaki webSite'da oldugu icin driver'i disa gecirirz.
+        driver.switchTo().defaultContent(); // Yazi distaki webSite'da oldugu icin driver'i disa gecirirz.
         WebElement elementalSelenium = driver.findElement(By.xpath("//a[text()='Elemental Selenium']"));
         Assert.assertTrue(elementalSelenium.isDisplayed());
 
