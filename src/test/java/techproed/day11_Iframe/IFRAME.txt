@@ -1,0 +1,33 @@
+
+
+Distaki Web Sayfasindan icteki Web Sayfasina gecis icindir. Yani icice yazilmis internet sayfalaridir.
+HTML kodlarinda da bu görünür. Distaki Web Sayfasinin bünyesinden bulunur.
+Örnegin;
+Distaki Web Sayfasi icine yerlestirilmis olan bir YOUTUBE videosu varsa, onu acmak icin direkt locate alip tikla dersek
+malesef ki calismaz o kod. Bu yüzden;
+Mutlaka driver.switchTo().iframe() yapmaliyiz !!!! Distakinden icteki gecis yapmaliyiz. !!!!
+
+Eger icteki Web Sayfasina gectikten sonra tekrar distaki Web sayfasindaki bir element ile islem yapmak istiyorsak
+tekrar icteki Web sayfasindan distaki Web Sayfasina cikarmáliyiz. !!!!
+
+
+                                 Handle Iframe ( iframe'e gecis )
+
+● Bir sayfada iframe varsa, Selenium bir iframe içindeki elementleri doğrudan göremez
+● switchTo( ) mettod’u ile iframe’e gecmenin 3 yolu vardir;
+1.) index ile :
+driver.switchTo( ).frame(index of the iframe); //index 0’dan baslar
+2.) id veya name value ile
+driver.switchTo( ).frame("id of the iframe");
+3 ) WebElement ile --> Bu tercih edilebilir.
+driver.switchTo( ).frame(WebElement of the iframe);
+
+
+                                   Handle Iframe ( iframe'Den cikis )
+
+Iframe’den cikmak icin 2 komut vardir
+driver.switchTo( ).parentFrame( ); 1 ust seviyedeki frame’e cikartir
+driver.switchTo( ).defaultContent( ); En ustteki frame’e cikmak icin kullanilir
+Birden fazla iframe varsa gecislerde dikkatli olmak lazim. Gecisler
+her zaman basit olamayabilir
+https://html.com/tags/iframe/
