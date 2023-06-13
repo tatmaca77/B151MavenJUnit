@@ -1,0 +1,16 @@
+
+
+En sonki dersimizden neler hatırlıyoruz?
+
+Dropdown?
+
+-Acilir menu. Birden fazla seçeneği koyabileceğimiz liste.
+***Dropdown nasil automate edilir? How to handle dropdown?
+1. Dropdown elementi locate edilir.8 locatordan biri kulllaninbilir.
+2. Select classi kullanılarak bir Select objesi oluşturulur. Select select = new Select(dropdownElement);
+3. Select objectini kullanarak uygun methodlarla islem yapılır
+-selectByIndex(int); index 0 dan baslar
+-selectByValue(“String”);
+-selectByVisibleText(“String”);
+***getOptions(); tum dropdown seçenekleri List<WebElement> olarak return eder
+***getFirstSelectedOption(); secili olna ilk secenegi(default) return eder.
