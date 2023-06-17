@@ -58,6 +58,27 @@ public class C02_Actions_DragDrop extends TestBase {
         //moveToElement() --> Bu method ile basili tuttugumuz we'ti diger we'tin üzerine götürdük.
         //release() --> Bu method ile basili tuttugumuz webelement'i serbest biraktik.
         //perform() --> Bu method ile de islemi sonlandirdik.
+    }
+
+    @Test
+    public void test03() {
+
+        //https://jqueryui.com/droppable/ adresine gidelim
+        driver.get("https://jqueryui.com/droppable/");
+        /**
+         drag ve drop webelemetleri "iframe" icinde oldugu icin iframe'e gecis yapmaliyiz.
+         */
+        driver.switchTo().frame(0);  // 1 tane iframe oldugu icin index ile aldik 0 yaptik. Yada locate al.
+
+        //Drag me to my target webelementini Drop here webelementi üzerine bıkalım
+        WebElement drag = driver.findElement(By.xpath("//*[@id='draggable']"));
+        bekle(2);
+        WebElement drop = driver.findElement(By.xpath("//*[@id='droppable']"));
+
+        Actions actions = new Actions(driver);
+        actions.clickAndHold(drag).moveByOffset(84,28).release().perform();
+
+        //moveByOffset() --> Beirtmis oldugumuz koordinatlara webelementi tasir.
 
 
     }
