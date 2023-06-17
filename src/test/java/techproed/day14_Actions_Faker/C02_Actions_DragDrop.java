@@ -11,6 +11,8 @@ public class C02_Actions_DragDrop extends TestBase {
     @Test
     public void test01() {
 
+        /*****  ******* 1 . YOL  ******* */
+
         //https://jqueryui.com/droppable/ adresine gidelim
         driver.get("https://jqueryui.com/droppable/");
 
@@ -60,9 +62,10 @@ public class C02_Actions_DragDrop extends TestBase {
         //perform() --> Bu method ile de islemi sonlandirdik.
     }
 
+    /** ******* 3 . YOL ****** */
+
     @Test
     public void test03() {
-
         //https://jqueryui.com/droppable/ adresine gidelim
         driver.get("https://jqueryui.com/droppable/");
         /**
@@ -76,10 +79,9 @@ public class C02_Actions_DragDrop extends TestBase {
         WebElement drop = driver.findElement(By.xpath("//*[@id='droppable']"));
 
         Actions actions = new Actions(driver);
-        actions.clickAndHold(drag).moveByOffset(84,28).release().perform();
+        actions.clickAndHold(drag).moveByOffset(105,28).release().perform();
 
         //moveByOffset() --> Beirtmis oldugumuz koordinatlara webelementi tasir.
-
 
     }
 }
