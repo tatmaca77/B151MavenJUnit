@@ -32,7 +32,8 @@ public class C02_Actions_DragDrop extends TestBase {
         /**
              Eger bir hareketli webelement'i tutup baska bir webelement'in üzerine birakmak istersek
         sürüklemek istedigimiz webelementin locate'ini alip üzerine birakacagimiz webelementin locate'ini de alarak
-        dragAndDrop(kaynak, hedef) methodu ile islemi gerceklestirebiliriz.
+        "dragAndDrop(kaynak, hedef)" --> methodu ile islemi gerceklestirebiliriz.
+                            ( Drag And Drop -- > Sürükle birak. )
          */
     }
 
@@ -81,7 +82,7 @@ public class C02_Actions_DragDrop extends TestBase {
         Actions actions = new Actions(driver);
         actions.clickAndHold(drag).moveByOffset(105,28).release().perform();
 
-        //moveByOffset() --> Beirtmis oldugumuz koordinatlara webelementi tasir.
+        /** moveByOffset() --> Beirtmis oldugumuz koordinatlara webelementi tasir. */
 
     }
 }
