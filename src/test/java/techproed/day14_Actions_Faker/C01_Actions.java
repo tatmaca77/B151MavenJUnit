@@ -18,7 +18,7 @@ public class C01_Actions extends TestBase {
 public void test01() {
     //techpro sayfasina gidelim
     driver.get("https://techproeducation.com/");
-    driver.findElement(By.xpath("//i[@class='eicon-close']"));
+    driver.findElement(By.xpath("//i[@class='eicon-close']")); // Cikan reklami kapatiriz.
     bekle(2);
 
     //sayfanin altina dogru gidelim
@@ -58,13 +58,14 @@ public void test01() {
 
         /**
 her actions dan sonra perform kullanmazsak olay cok seri gerceklesir.
-build kullandigimizda olay milisaniye icinde gerceklesir.
+"build" kullandigimizda olay milisaniye icinde gerceklesir.
 araya bekle methodu koysak bile java build methodunun oldugu kisimda sayfayi asagi yaparak hizli sekilde gerceklestirir
 
-release() methodu kutuyu bir yerrden sürükleme veya eslestirme gibi konulari yaparken
-mouseyi cekip birakmali sorularda release() methodu kullanilir
-actionsta mouseta sürükleme islemi yapiyorsak serbest birakma islemi icin release() methodu kullanilir.
- *///build = kur , inşa et, oluştur.
+"release()" --> methodu kutuyu bir yerrden sürükleme veya eslestirme gibi konulari yaparken
+                mouseyi cekip birakmali sorularda release() methodu kullanilir
+                actionsta mouseta sürükleme islemi yapiyorsak serbest birakma islemi icin release() methodu kullanilir.
+ */
+        //build = kur , inşa et, oluştur.
         //build() -->methodu action'lari birlestirmek icin kullanilan methoddur.Birden fazla olusturdugumuz action
         //objesini birbirine baglar
         //release() methodu mouse'u birakir
@@ -84,6 +85,8 @@ actionsta mouseta sürükleme islemi yapiyorsak serbest birakma islemi icin rele
 
         // sayfanin üstüne dogru gidelim
         actions.scrollByAmount(0,-1500).perform();
+
+        /** scrollByAmount() --> methodu ile koordinat belirterek islemi yapariz. */
 
     }
 }
