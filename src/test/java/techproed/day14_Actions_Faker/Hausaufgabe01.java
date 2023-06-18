@@ -1,6 +1,6 @@
 package techproed.day14_Actions_Faker;
 
-public class Hausaufgabe {
+public class Hausaufgabe01 {
 
      /**
     1- "http://webdriveruniversity.com/Actions" sayfasina gidin
