@@ -20,7 +20,7 @@ public class C03_KeyDownKeyUp extends TestBase {
 
         // google anasayfasina gidelim  https://www.google.com/
         driver.navigate().to("https://www.google.com/");
-        driver.findElement(By.xpath("//div[text()='Alle akzeptieren']")).click();
+        driver.findElement(By.xpath("//div[text()='Alle akzeptieren']")).click(); // Cookies kabul ettik.
 
         // arama kutusunda:
         // shift tusuna basili olarak "selenium" yazdiralim ve shift tusunu serbest birakarak "java" yazdiralim
@@ -60,12 +60,12 @@ public class C03_KeyDownKeyUp extends TestBase {
            NOTE : Genelde mause harketlerinde "action" kullanirsin. Klavye hareketlerinde cok gerek yok !!!!!
          */
 
-        /*
+        /**
         Mause islemleri icin action class'ini kullanmamiz gereklidir. Fakat bir metin kutusundaki klavye islemleri
-        icin action class'ini kullanmadan sendKeys() methodu ile de istedigimiz bir metni büyük veya kücük
-        yazdirabilir, hatta bir den fazla klavye tuslarina bastirabiliriz. Yukaridaki örnekte sendKeys() methodu
-        ile Keys.SHIFT diyerek sonrasinda yazdirmak istedigimiz metni tirnak icinde kücük harflerle yazmamiza
-        ragmen büyük harflerle texti yazdirir. Tekrar Keys.SHIFT kullanarak "shift" tusunu serbest birakmis oluruz.
+        icin action class'ini kullanmadan "sendKeys()" methodu ile de istedigimiz bir metni büyük veya kücük
+        yazdirabilir, hatta bir den fazla klavye tuslarina bastirabiliriz. Yukaridaki örnekte "sendKeys()" methodu
+        ile "Keys.SHIFT" diyerek sonrasinda yazdirmak istedigimiz metni tirnak icinde kücük harflerle yazmamiza
+        ragmen büyük harflerle texti yazdirir. Tekrar "Keys.SHIFT" kullanarak "shift" tusunu serbest birakmis oluruz.
          */
     }
 
