@@ -32,13 +32,14 @@ public class ClassWork01 extends TestBase {
         //Arattığımız kelimeyi arama kutusundan ctrl+x ile keselim
         driver.findElement(By.xpath("//*[@class='gLFyf']")).//-->sayfa yenilendiği için tekrar locate aldık
                 sendKeys(Keys.CONTROL,"a");//-->Metni kesebilmemiz için önce ctrl+a ile seçmemiz gerekir
-        driver.findElement(By.xpath("//*[@class='gLFyf']")).
+
+        driver.findElement(By.xpath("//*[@class='gLFyf']")).//-->sayfa yenilendiği için tekrar locate aldık
                 sendKeys(Keys.CONTROL,"x");//-->Seçilen metni ctrl+x ile kestik
 
         //Tekrar google sayfasına gidip kestiğimiz kelimeyi ctrl+v ile yapıştırıp tekrar aratalım
         driver.navigate().to("https://google.com");
-        driver.findElement(By.xpath("//*[@class='gLFyf']")).
-                sendKeys(Keys.CONTROL,"v",Keys.ENTER);
+        driver.findElement(By.xpath("//*[@class='gLFyf']")).//-->sayfa yenilendiği için tekrar locate aldık
+                sendKeys(Keys.CONTROL,"v",Keys.ENTER);//-->Seçilen metni ctrl+v ile yapistirdik ve arattik.
 
     }
 }
