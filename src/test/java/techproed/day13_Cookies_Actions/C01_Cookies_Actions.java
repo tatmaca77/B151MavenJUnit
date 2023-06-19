@@ -16,7 +16,7 @@ public class C01_Cookies_Actions extends TestBase {
             driver.get("https://amazon.com");
 
             //2-tum cookie’leri listeleyin
-        /*
+        /**
         Cookie'leri listemek istersek
                 driver.manage().getCookies() methoduyla bir Set yada ArrayList'e atarak listeleyebiliriz
          */
