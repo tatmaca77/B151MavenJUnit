@@ -39,6 +39,12 @@ public class C03_FileUpload extends TestBase {
         dateiAuswählen.sendKeys(dosyaYolu);
         bekle(4);
 
+        /**
+        click() methodunu kullanmamliyim; cünkü dosya sec butonuna basinca benim bilgisayarima erisim dosyalari cikar
+                Ancak SELENIUM benim pc'me müdahale edemez. Bu yüzden click gereksiz,
+                "sendKeys()" ile direkt dosyaYolunu göndeririz.
+         */
+
         // 'Upload' butonuna basın
         WebElement button = driver.findElement(By.xpath("//input[@id='file-submit']"));
         button.click();
