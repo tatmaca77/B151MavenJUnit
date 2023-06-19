@@ -46,8 +46,7 @@ public class C03_FileUpload extends TestBase {
          */
 
         // 'Upload' butonuna basın
-        WebElement button = driver.findElement(By.xpath("//input[@id='file-submit']"));
-        button.click();
+        driver.findElement(By.xpath("//input[@id='file-submit']")).click();
         bekle(2);
 
         // 'File Uploaded!' yazısının goruntulendigini test edin
