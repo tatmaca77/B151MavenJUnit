@@ -4,13 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import techproed.utilities.TestBase;
 
-import java.time.Duration;
-
-public class C02_ExplicitWait extends TestBase {
+public class C02_WebDriverWait_ExplicitWait extends TestBase {
 
     @Test
     public void test01() {
