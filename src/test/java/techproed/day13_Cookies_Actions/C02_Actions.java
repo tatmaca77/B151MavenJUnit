@@ -16,7 +16,8 @@ public class C02_Actions extends TestBase{
 
         //Kutuya sag tıklayın
         WebElement kutu = driver.findElement(By.id("hot-spot"));
-        //Sağ klik yapabilmek için öncelikle Actions class'ından bir obje oluşturmalıyız
+        /** Sağ klik yapabilmek için öncelikle Actions class'ından bir obje oluşturmalıyız */
+
         Actions actions = new Actions(driver);
         actions.contextClick(kutu).//sağ klik yapma methodu kullandık.argüman olarak we'tin locate'ini yazdık
                 perform();//actions objemizle yapacağımız işlemi uygulaması için veya sonlandırması için perform() kullanırız.
