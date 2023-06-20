@@ -1,0 +1,93 @@
+
+
+     Actions class I kullanarak mouse and keyboard islemleri yapılır.
+     2 tip actions vardir:
+     Mouse-based actions : double-click, right click,
+     click and hold, drag and drop, move over element etc, scroll.
+     Keyboard-based actions: Shift, Ctrl, and Alt keys.
+     Actions has many useful mouse and keyboard functions
+
+
+     ➢ 1.Adım: Actions class’ta bir object oluşturulur.
+     Actions actions= new Actions(driver);
+     ➢ 2. Adım: Üzerinde çalışmak istediğiniz WebElement
+     öğesini bulunur.
+     WebElement element = driver.findElement(locator);
+     ➢ 3.Adim : perform() kullanarak bu webelement üzerinde
+     action gerçekleştirilir.
+     ➢ Örneğin tıklamak için.
+     actions.click(element).perform( );
+     NOT : 1. Action Class’ini her kullanmak istedigimizde yeniden obje olusturmamiz gerekmez. Ayni obje tekrar tekrar driver
+     objesi gibi kullanilabilir
+     2. action objesi kullanilarak baslayan her komut, calismak icin perform( ) bekler
+
+
+   PAGE_DOWN =>scrolling down
+   PAGE_UP =>scrolling up
+   ARROW_DOWN =>scrolling down
+   ARROW_UP =>scrolling up
+   Arrow vs Page : Arrow moves less than Page
+
+
+   ➢ doubleClick ( ): WebElement’e çift tıklama yapar
+   ➢ clickAndHold ( ): WebElement uzerinde click yapili
+   olarak bizden komut bekler.
+   ➢ dragAndDrop ( ): WebElement’i bir noktadan diğerine
+   sürükler ve bırakır
+   ➢ moveToElement ( ): Mouse’u istedigimiz WebElement’in
+   uzerinde tutar
+   ➢ contextClick ( ): Mouse ile istedigimiz WebElement’e
+   sag tiklama yapar
+
+
+
+      /**   NOTE:
+                Eger bir hareketli webelement'i tutup baska bir webelement'in üzerine birakmak istersek
+           sürüklemek istedigimiz webelementin locate'ini alip üzerine birakacagimiz webelementin locate'ini de alarak
+           "dragAndDrop(kaynak, hedef)" --> methodu ile islemi gerceklestirebiliriz.
+                               ( Drag And Drop -- > Sürükle birak. )
+            */
+
+
+
+                    //clickAndHold() --> Bu method ile webelemente mouse ile basili tuttuk.
+                    //moveToElement() --> Bu method ile basili tuttugumuz we'ti diger we'tin üzerine götürdük.
+                    //release() --> Bu method ile basili tuttugumuz webelement'i serbest biraktik.
+                    //perform() --> Bu method ile de islemi sonlandirdik.
+
+                     /** moveByOffset() --> Beirtmis oldugumuz koordinatlara webelementi tasir. */
+
+
+      ➢ Action Class’indan kullanacagimiz method’lar ile
+      klavyedeki tuslari kontrol edebiliriz.
+      ➢ Bunun icin 3 method kullaniriz.
+      ■ sendKeys ( ): Öğeye bir dizi anahtar gönderir
+      ■ keyDown ( ): Klavyede tuşa basma işlemi gerçekleştirir
+      ■ keyUp ( ): Klavyede tuşu serbest bırakma işlemi
+      gerçekleştirir
+
+
+                             // keyDown(aramaKutusu, Keys.SHIFT) --> Arama Kutusunda shift tusuna bastik.
+                             // keyUp(Keys.SHIFT) --> Shift tusunu serbest biraktik.
+                             // sendKeys("selenium") --> Bu method ile istedigimiz yaziyi yazdik.
+                             // Keys.ENTER) --> Enter'a basip arattik.
+                             // perform(); --> Islemi bitirdik.
+
+
+
+
+            /**
+               NOTE : Genelde mause harketlerinde "action" kullanirsin. Klavye hareketlerinde cok gerek yok !!!!!
+             */
+
+            /**
+            Mause islemleri icin action class'ini kullanmamiz gereklidir. Fakat bir metin kutusundaki klavye islemleri
+            icin action class'ini kullanmadan "sendKeys()" methodu ile de istedigimiz bir metni büyük veya kücük
+            yazdirabilir, hatta bir den fazla klavye tuslarina bastirabiliriz. Yukaridaki örnekte "sendKeys()" methodu
+            ile "Keys.SHIFT" diyerek sonrasinda yazdirmak istedigimiz metni tirnak icinde kücük harflerle yazmamiza
+            ragmen büyük harflerle texti yazdirir. Tekrar "Keys.SHIFT" kullanarak "shift" tusunu serbest birakmis oluruz.
+             */
+
+
+
+
