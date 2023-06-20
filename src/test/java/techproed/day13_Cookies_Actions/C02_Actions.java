@@ -30,5 +30,7 @@ public class C02_Actions extends TestBase{
 
         //Tamam diyerek alert’i kapatın
         acceptAlert();//-->TestBase deki methodu kullandık --> driver.switchTo().alert().accept()
+
+        /** contextClick() ==> methodu mouse'da sag tiklamamiza yarar. */
     }
 }
