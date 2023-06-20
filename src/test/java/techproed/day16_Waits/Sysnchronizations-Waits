@@ -1,0 +1,124 @@
+
+*********** Synchronization - SeleniumWaits *********
+➢ Synchronization(Senkronizasyon), UI (kullanıcı arayüzü) otomasyon testi için çok çok
+önemlidir.
+➢ Bir sayfanın uygulama sunucusu veya web
+sunucusu çok yavaşsa veya internet ağı çok
+yavaşsa, web sayfasındaki öğe (webelement) çok
+yavaş yüklenir.
+➢ Bu durumda, komut dosyanız (test script)
+öğeyi bulmaya çalıştığında, öğeler
+yüklenmez.
+➢ Bu yüzden test komut dosyası(test script) öğeyi bulamaz ve başarısız olur ve
+NoSuchElementExeption alırız
+
+
+*************** Synchronization - Selenium Waits ****************
+➢ Driver ile cihaz veya internet arasinda yasanan senkronizasyon sorunlarini
+çözmek icin
+sürücümüzü(driver) belli sartlar ile bekletmemiz(wait) gerekir.
+1.) Java tabanli wait
+Thread.sleep : Javadan gelir ve kodlari
+yazilan sure kadar bekletir. Sure dolduktan
+sonra alt satirdan isleme devam eder
+2.) Selenium tabanli wait’ler
+Implicitly Wait: Sayfadaki tüm öğeler için global bir
+zaman aşımıdır(timeout).
+Explicitly Wait: Çoğunlukla belirli öğeler için belirli bir koşul(expected
+condition) için kullanılır.
+
+
+
+
+********** Selenium tabanli wait’ler ************
+
+A-) Implicitly Wait: Sayfadaki tüm öğeler için global bir
+zaman aşımıdır(timeout).
+
+B-) Explicitly Wait: Çoğunlukla belirli öğeler için belirli bir koşul(expected
+condition) için kullanılır
+
+** Explicitliy Wait 2'ye ayrilir. **
+
+1- WebDriverWait
+Her 500ms de bir kontrol eder. Kontrol etme süresini biz belirleriz. Kontrol etme siklifi default olarak 500 ms dir.
+
+2- Fluent Wait
+Kontrol etme sikligini ve süresini biz belirleriz. !!
+
+
+
+************ IMPLICITLY WAIT ***************
+
+*Bir sayfanin yuklenmesi veya sayfadaki her bir öğenin locate edilebilmesi için driver’i
+bekletir.
+
+*Selenium tabanli wait’lerde verilen sure max. bekleme suresidir, islem daha once biterse
+surenin
+bitmesi beklenmez, kod calismaya devam eder.
+
+*Genellikle otomasyon frameworklerinde olasi senkronizasyon
+problemleri icin default olarak implicitly wait ile kullanilir.
+Implicitly wait’i TestBase class’ımızda kullanıyoruz.
+
+*Bu kod, driver’in sayfadaki herhangi bir weblement için maximum 10
+saniye beklemesini istediğimiz anlamına gelir.
+
+*Webelement 10 saniyeden kisa surede yüklenirse driver bulur ve devam eder. Örneğin,
+Webelement 3
+saniye içinde yüklenirse, driver sadece 3 saniye bekleyecek ve bir sonraki satıra geçecektir.
+*Webelement 10 saniye içinde yüklenmezse, test case başarısız olur ve NoSuchElementExeption.
+
+*Her bir Web Element icin belirledigimiz saniye kadar bekler. Ve belirledigimiz saniyeden daha az sürede yüklenirse WE
+beklemez diger WE'ye gecer. Hepsi icin ayri ayri 10'ar saniye verir. Ama bu verilen süre icinde yüklenmezse
+EXCEPTION atar.
+
+
+************ EXPLICIT WAIT ****************
+
+*Beklenen bir durum(expected condition) olduğunda explicit wait kullanılır.
+
+*Implicitly wait ile cozulebilecek durumlar icin expilicitly wait kullanimina ihtiyac yoktur.
+
+*Nadiren karsimiza cikan ve daha fazla bekleme süresi
+gerektiren belirli öğeler(webelement) için explicitly wait
+kullanılır.
+
+*İlk olarak belirli miktarda bekleme süresi ile wait object
+create edilir.
+
+*WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+
+*Olusturdugumuz wait objesi sayesinde WebDriverWait class’indan
+until( ) method’u ile birlikte ExpectedConditions Class’ini
+kullanabiliriz. Ornegin WebElement’i locate etmek icin wait object’i
+kullanma
+
+* WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("...")));
+
+*Burda biz bir kosul belirleriz. Beklenen sart gerceklesinceye kadar bekle deriz.
+*Expicitly Wait cok nadiren karsimiza cikar genelde Impicitly Wait ile isimizi halledebiliriz.
+*Belirli bir WebElemet icin kullanilabilir.
+
+
+*********** EXPLICIT WAIT Expected Conditions **********
+
+1.alertIsPresent( )
+2.elementSelectionStateToBe( )
+3.elementToBeClickable( )
+4.elementToBeSelected( )
+5.frameToBeAvaliableAndSwitchToIt( )
+6.invisibilityOfTheElementLocated( )
+7.invisibilityOfElementWithText( )
+8.presenceOfAllElementsLocatedBy( )
+9.presenceOfElementLocated( )
+10.textToBePresentInElement( )
+11.textToBePresentInElementLocated( )
+12.textToBePresentInElementValue( )
+13.titleIs( )
+14.titleContains( )
+15.visibilityOf( )
+16.visibilityOfAllElements( )
+17.visibilityOfAllElementsLocatedBy( )
+
+
