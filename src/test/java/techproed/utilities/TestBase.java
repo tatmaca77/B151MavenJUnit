@@ -5,8 +5,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;             // Resable Methodlar kullanilir.
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -83,5 +85,16 @@ public class TestBase {
         Select select = new Select(ddm);
         select.selectByValue(value);
     }
+
+    /** Explicit Wait */
+    public void visibleWait(WebElement locate, int seconds ){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.visibilityOf(locate));
+
+    }
+
+
+
+
 
 }
