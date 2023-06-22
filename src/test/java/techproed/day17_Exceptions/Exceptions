@@ -1,0 +1,57 @@
+
+
+TimeOutException:
+
+Explicit wait kullanildiginda, ve element bulunamadiginda
+alinir.
+Explicit wait & yanlis locator-> timeout
+Explicit wait & doğru locator & sure yeterli degil -> timeout
+Explicit wait & dogru locator & sure yeterli & iframe var ->
+time out
+Solution:
+-Sureyi arttirmak
+-Farkli explicit kullanmak: wait visibilityOfElementLocated
+YERINE presenceOfElementLocated. Yada javascript executor
+da ki waiter sayfa geçişlerini beklemek icin kullanabilirim
+-Locatori tekrar kontrol etmek
+-Frameworkunde hazir reusable method lar var Bu durumda
+timeoutexception aldigimda hızlıca o metotlar yardımıyla
+problemi cozebiliyoruz
+
+
+
+
+
+ /**
+     NoSuchElementException:
+
+Yanlis locator
+Popup, yeni pencere, iframe,…
+Sayfa dolmada problemler ve yavaslamalar
+Sakli olan elementle
+
+            Solution:
+Locatorin dogrulugunu tekrar kontrol et
+Manual test ile iframe, yeni pencere, alert,… gibi elementlerin varligini kontrol et.
+Bekleme problemi olabilir. Implicit wait bekleme suresini cozmuyor. Bu durumda explicit wait yada
+fluent wait kullaniriz
+     */
+
+
+     /*
+     NullPointerException
+
+     Degiskenleri oluşturup
+     instantiate etmediğimizde
+     alırız(new kelimesini
+     kullanmadigimizda)
+     Ornegin WebDriver driver;
+     deyip = new
+     ChromeDriver() demezisek
+     null pointer exception aliriz
+
+     Solution:
+     Degiskeni instantiate et
+
+
+     */
