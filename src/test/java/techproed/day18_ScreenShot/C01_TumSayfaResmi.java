@@ -25,21 +25,23 @@ public class C01_TumSayfaResmi extends TestBase {
     public void test01() throws IOException {
         //Techproeducation sayfasına gidelim
         driver.get("https://techproeducation.com");
-
         bekle(2);
+
+
         //Çıkan reklamı kapatalım
         driver.findElement(By.xpath("//i[@class='eicon-close']")).click();
 
+
         //Ve ekran görüntüsünü alalım
-        /*
+        /**
         -İlk olarak SS aldığımızda nereye kaydetmek istiyorsak oranın yolunu belirtelim
         -İkinci olarak TakesScreenShot arayüzünden obje oluştururuz
         -Üçüncü olarak FileUtils class'ından copyFile() methodu ile ts objemizi kullanarak getScreenShotAs methodu ile
         dosya yolunu belirteceğiz
          */
-        String dosyaYolu = "src/test/java/techproed/TumSayfaResmi/screenShot3.jpeg";
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
+        String dosyaYolu = "src/test/java/techproed/TumSayfaResmi/screenShot.png"; // 1. Adim
+        TakesScreenshot ts = (TakesScreenshot) driver; // 2. Adim  --> Type Casting yaptik esitledik.
+        FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu)); // 3. Adim Exception at Signature icine.
 
     }
 
@@ -59,9 +61,9 @@ public class C01_TumSayfaResmi extends TestBase {
 
     @Test
     public void test03() throws IOException {
-        /*
+        /**
         Kaydettiğimiz ekran resmini her seferinde aynı dosya üzerine yazmaması için dosya isminden sonra
-        String bir değişkene tarih formatı atayabiliriz.
+        String bir değişkene tarih formatı atayabiliriz. !!!!!!
          */
         //Techproeducation sayfasına gidelim
         driver.get("https://techproeducation.com");
@@ -71,14 +73,16 @@ public class C01_TumSayfaResmi extends TestBase {
         driver.findElement(By.xpath("//i[@class='eicon-close']")).click();
 
         //Ve ekran görüntüsünü alalım
-        /*
-        SimpleDateFormat'ı kullanarak yeni bir tarih formatı oluşturup bir String'e assing ederiz.
+        /**
+        "SimpleDateFormat"ı kullanarak yeni bir tarih formatı oluşturup bir String'e assing ederiz.
         Ve bunu dosya isminden önce belirtiriz.
          */
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
         String dosyaYolu = "src/test/java/techproed/TumSayfaResmi/screenShot" + tarih + ".jpeg";
         TakesScreenshot ts = (TakesScreenshot) driver;
         FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
+
+        // Bu sekilde dosya her seferinde ScreenShot üzerine yazmaz, tarihe göre ayirir. Unique olmali !!!!!!
     }
 
     @Test
@@ -89,7 +93,6 @@ public class C01_TumSayfaResmi extends TestBase {
         bekle(2);
 
         //Ve ekran görüntüsünü alalım
-
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
         String dosyaYolu = "src/test/java/techproed/TumSayfaResmi/screenShot" + tarih + ".jpeg";
         TakesScreenshot ts = (TakesScreenshot) driver;

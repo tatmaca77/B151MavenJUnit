@@ -28,5 +28,13 @@ public class C02_TumSayfaResmi extends TestBase {
         String dosyaYolu = "src/test/java/techproed/TumSayfaResmi/screenShot" + tarih + ".jpeg";
         TakesScreenshot ts = (TakesScreenshot) driver;
         Files.write(Paths.get(dosyaYolu),ts.getScreenshotAs(OutputType.BYTES));
+        // FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
+        /**
+        FileUtils yerine daha önce ögrendigimiz Files Class'i ile yapabiliriz. !!!!
+
+         FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu)); ****** 1.YOLU ****
+                        ===============
+         Files.write(Paths.get(dosyaYolu),ts.getScreenshotAs(OutputType.BYTES));  ******  2.YOLU ****
+         */
     }
 }

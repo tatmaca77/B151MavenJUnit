@@ -24,7 +24,6 @@ public class C03_TumSayfaResmi extends TestBase {
         driver.findElement(By.xpath("//i[@class='eicon-close']")).click();
 
         //Ve ekran görüntüsünü alalım
-
+        tumSayfaResmi();
     }
-
 }
