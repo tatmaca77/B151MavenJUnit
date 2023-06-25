@@ -1,18 +1,21 @@
 package techproed.utilities;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;             // Resable Methodlar kullanilir.
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -59,6 +62,33 @@ public class TestBase {
         }
     }
 
+    /** Selenium Wait/Explicit Wait */
+
+    /** visibilityOf(element) methodu */
+    public void visibleWait(WebElement element, int saniye) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(saniye));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    /** visibilityOfElementLocated(locator) methodu */
+    public void visibleWait(By locator, int saniye) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(saniye));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    /** AlertWait methodu */
+    public void alertWait(int saniye) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(saniye));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    /** FluentWait visible Methodu */
+    public void visibleFluentWait(WebElement element, int saniye, int milisaniye) {
+        new FluentWait<>(driver).withTimeout(Duration.ofSeconds(saniye)).
+                pollingEvery(Duration.ofMillis(milisaniye)).
+                until(ExpectedConditions.visibilityOf(element));
+    }
+
     /** AcceptAlert */
     public static void acceptAlert () {
         driver.switchTo().alert().accept();
@@ -98,7 +128,7 @@ public class TestBase {
     }
 
     /** Explicit Wait */
-    public void visibleWait(WebElement locate, int seconds ){
+    public void visibleWait1(WebElement locate, int seconds ){
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.visibilityOf(locate));
 
@@ -148,6 +178,37 @@ public class TestBase {
         Her bu methodu cagirdigimda Exception ile ugrasmamak icin "try-catch" blogu kullaniriz. !!!!!
          */
     }
+
+
+    /** UploadFile Robot Class */
+
+    public void uploadFilePath(String filePath) {
+        try {
+            bekle(3);
+            StringSelection stringSelection = new StringSelection(filePath);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            bekle(3);
+            robot.keyPress(KeyEvent.VK_V);
+            bekle(3);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            bekle(3);
+            robot.keyRelease(KeyEvent.VK_V);
+            bekle(3);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            bekle(3);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            bekle(3);
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    /** Extent Report Methodu */
+
+
 
 
 
