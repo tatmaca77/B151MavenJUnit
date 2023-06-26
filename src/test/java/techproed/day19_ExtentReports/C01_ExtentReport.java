@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class C01_ExtentReport extends TestBase {
 
-    /*
+    /**
   EXTENTREPORT;
      1- ExtentReport(aventstack) kullanabilmek için öncelikle mvn adresinden 4.0.9 versiyon numaralı
   dependency'i pom.xml dosyamıza ekleriz.
