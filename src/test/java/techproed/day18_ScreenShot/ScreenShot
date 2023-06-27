@@ -1,0 +1,59 @@
+
+
+Tester olarak ekran goruntusu neden alınır?
+
+* Documantasyon icin
+* Gecen test caselerin geçtiğini kayda geçirmek icin
+* Kalan test caselerin de kaldigini/ bug bulunduğunu kayda geçirmek icin
+
+--- Manuel olrak Ekran Görüntüsü almak icin :  WINDOWS : Windows +Shift +S ---
+
+
+-->Atomosyon test yaparken selenium ile otomatik olarak ekran goruntusu alabiliriz
+-->Seleniumdan daki TakeScreenshot apiindan gelen "getScreenshotAs" metotu kullanilir
+-->Bu ekran goruntulerinin nereye kaydedileceğini, adinin ne olacagini, ve hangi durumlarda(istediğimiz zaman,
+yada sadece fail etme durumunda,…) kaydedileceğini belirleyebiliriz
+-->Selenium 4 den itibaren tum ekran goruntusunu daya sadece belirli elementin ekran goruntusunu alabiliriz
+-->Reusable Method a ekleyeceğimiz metotlar yardımıyla bu iki islem kolaylıkla yapacağız
+
+
+
+*******   Get Screenshot / Tum Sayfa  ********
+
+Selenium 3 ile tum sayfanin fotografini alabiliyorduk, Selenium 4 ile gelen guzel ozelliklerden bir tanesi de
+istedigimiz WebElement’in fotografini almamiza imkan tanimasidir.
+
+1.Adim : Bir TakeScreenhot objesi olusturup driver’imizi TakeScreenhot’a cast yapalim
+ ==> TakeScreenShot ts = (TakeScreenShot) driver;
+
+2.Adim : kaydettigimiz ekran goruntusunu projede istedigimiz yere kaydedebilmek icin path ile yeni bir File olusturalim
+ ==> File tumResim = new File("target/ekranresim/tumresim")
+
+3.Adim : Takescreenshot objesini kullanarak getScreenshotAs( ) methodunu calistiralim ve gelen
+resmi gecici bir file’a assign edelim
+ ==> File geciciResim = ts.getScreenshotAs(OutputType.FILE);
+
+4.Adim : Kaydettigimiz goruntuyu, saklamak istedigimiz dosyaya kopyalayalim
+ ==> FileUtils.copyFile(geciciResim,tumResim);
+
+
+
+ *********  Get Screenshot / Spesific Webelement  ***********
+
+ 1.Adim : Webelementi locate edelim
+ WebElement logoElement = driver.findElement(By.xpath("lkdnslkvndsvsd"));
+
+ 2.Adim : kaydettigimiz ekran goruntusunu projede istedigimiz  yere kaydedebilmek icin path ile yeni bir File olusturalim
+ File logoResim = new File ("target/ekranResmi/logoresim.png")
+
+ 3.Adim : Webelement uzerinden getScreenshotAs( ) methodunu calistiralim  ve gelen resmi olusturdugumuz gecici file’a assign edelim
+ File logoGeciciResim = logoElement.getScreenshotAs(OutputType.FILE);
+
+ 4.Adim : Gecici resmi, saklamak istedigimiz dosyaya kopyalayalim
+ FileUtils.copyFile(logoGeciciResim,LogoResim);
+
+
+
+
+
+
