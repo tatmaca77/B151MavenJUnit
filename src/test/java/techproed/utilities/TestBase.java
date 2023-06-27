@@ -1,6 +1,7 @@
 package techproed.utilities;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -27,6 +28,10 @@ import java.util.Date;
 import java.util.List;
 
 public class TestBase {
+      // protected yaptik cünkü bunlari farkli Package'larda kullanabilmek icin. extends yaptiktan sonra.
+    protected ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
+    protected ExtentHtmlReporter extentHtmlReporter;//-->Raporu HTML formatında düzenler
+    protected ExtentTest extentTest;//--> Test adımlarına eklemek istediğimiz bilgileri bu class ile oluştururuz
 
     /**
        TestBase =>
@@ -50,7 +55,10 @@ public class TestBase {
 
     @After
     public void tearDown() throws Exception {
+        extentReports = new ExtentReports(); // NullPOinterException  vermemesi icin atama yaptik.
+        extentReports.flush(); //-->bu methodu kullanmazsak raporumuz oluşmaz. Yani kapatma islemidir.
         driver.quit();
+
     }
 
     /** HARD WAIT ( Bekleme Methodu ) */
@@ -207,6 +215,26 @@ public class TestBase {
 
 
     /** Extent Report Methodu */
+
+    public void extentReport(String browser, String reportName, String testerName){
+        extentReports = new ExtentReports();
+        String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date()); // Her raporu ayri ayri olusturur.
+        String dosyaYolu = "testOutput/extentReports/extentReport"+tarih+".html"; // DOSYA YOLU belirttik.
+        extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
+        extentReports.attachReporter(extentHtmlReporter);//-->HTML formatında raporlamayı başlatacak
+
+        //Raporda gözükmesini isteğimiz bilgiler için
+        extentReports.setSystemInfo("Browser",browser);
+        extentReports.setSystemInfo("Tester",testerName);
+        extentHtmlReporter.config().setDocumentTitle("Extent Report");
+        extentHtmlReporter.config().setReportName(reportName);
+
+        /**
+        Extent Report alabilmek icin yaptigim ayarlamalarin methodu. Class isimlerini de Class seviyesinde en üstte
+        yazdik.
+         */
+
+    }
 
 
 
