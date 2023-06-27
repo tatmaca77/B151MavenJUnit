@@ -23,6 +23,9 @@ public class C01_ExtentReport extends TestBase {
      2- ExtentReports class'ından class seviyeninde obje oluştururuz
      3- ExtentHtmlReporter class'ından class seviyeninde obje oluştururuz
      4- ExtentTest class'ından class seviyeninde obje oluştururuz
+
+     --> Genelde INTERVIEW'da ExtentReport Syntax'ini sormazlar. Evet kullandim dersin.
+         Ve bu ExtentReport TestNG, Cucumber'da falan da kullanabiliriz.
    */
     ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
     ExtentHtmlReporter extentHtmlReporter;//-->Raporu HTML formatında düzenler

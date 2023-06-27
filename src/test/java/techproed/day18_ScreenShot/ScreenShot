@@ -53,6 +53,15 @@ resmi gecici bir file’a assign edelim
  FileUtils.copyFile(logoGeciciResim,LogoResim);
 
 
+ $$$$$   Ekran goruntusu alma:  $$$$$
+
+ ++ getScreenShotAs metotu ile alinir. Bu metot Selenium dan gelir
+ ++ getScreenshotAs metotu TakesScreenshot api indan gelir
+ ++ Selenium 4 den itibaren 2 farklı sekilde ekran goruntusu alınabilir: Tum Sayfa, Özel element
+ ++ Olusturmus oldugumuz ReusableMetot yardimizya ister tum sayfanin, istersem belirli bir
+ ++ elementin ekran goruntusunu kolaylıkla alabilirim.
+
+
 
 
 
