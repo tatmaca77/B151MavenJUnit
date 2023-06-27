@@ -1,0 +1,22 @@
+
+
+******** WEB TABLES ****************
+
+ // Web Table'da genellikle index kullanacagiz.
+
+<table> ======>>>>table
+ <thead> ======>>>>header
+ <tr> ======>>>>table rows
+ <th> ======>>>>table header data
+ </th>
+ </tr>
+ </thead>
+ <tbody> ========>>>>table body
+ <tr> ========>>>>table rows
+ <td> ========>>>>table data-cell
+ </td>
+ </tr>
+ </tbody>
+</table>
+
+genel yapisi bu sekildedir.
