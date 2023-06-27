@@ -29,9 +29,9 @@ import java.util.List;
 
 public class TestBase {
       // protected yaptik cünkü bunlari farkli Package'larda kullanabilmek icin. extends yaptiktan sonra.
-    protected ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
-    protected ExtentHtmlReporter extentHtmlReporter;//-->Raporu HTML formatında düzenler
-    protected ExtentTest extentTest;//--> Test adımlarına eklemek istediğimiz bilgileri bu class ile oluştururuz
+    protected static ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
+    protected static ExtentHtmlReporter extentHtmlReporter;//-->Raporu HTML formatında düzenler
+    protected static ExtentTest extentTest;//--> Test adımlarına eklemek istediğimiz bilgileri bu class ile oluştururuz
 
     /**
        TestBase =>
