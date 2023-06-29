@@ -44,11 +44,13 @@ public class C02_ExcelRead extends TestBase {
 
     @Test
     public void test02() throws IOException {
-        //PRATİK ÇÖZÜM
+
+        /** PRATİK ÇÖZÜM  */
+
         //1. Satır ve 1. sütun daki bilgileri yazdıralım
         FileInputStream fis = new FileInputStream("src/test/java/techproed/resources/Capitals.xlsx");
         Workbook workbook = WorkbookFactory.create(fis);
-        String satir1Sutun1=workbook.getSheet("Sheet1").getRow(0).getCell(0).toString();
+        String satir1Sutun1 = workbook.getSheet("Sheet1").getRow(0).getCell(0).toString();
         System.out.println("1. Satır 1. Sütun Bilgisi = "+satir1Sutun1);
     }
 
@@ -58,6 +60,7 @@ public class C02_ExcelRead extends TestBase {
         FileInputStream fis = new FileInputStream("src/test/java/techproed/resources/Capitals.xlsx");
         Workbook workbook = WorkbookFactory.create(fis);
         System.out.println(workbook.getSheet("Sheet1").getRow(0).getCell(1));
+
         //3. Satır 1. sütun değerini yazdırın ve "France" olduğunu test edin
         String satir3Sutun1 = workbook.getSheet("Sheet1").getRow(2).getCell(0).toString();
         System.out.println("3. Satir 1. Sütun bilgisi = "+satir3Sutun1);
@@ -69,9 +72,10 @@ public class C02_ExcelRead extends TestBase {
 
         //Sayfadaki satır sayısını yazdırınız
         System.out.println("Sayfadaki Satir Sayisi : "+workbook.getSheet("Sheet1").getLastRowNum());
-        //NOT:getLastRowNum() methodu sayfadaki son satırın sıra numarasını verir ve index 0(sıfır) dan başlar
+        /** NOT:getLastRowNum() methodu sayfadaki son satırın sıra numarasını verir ve index 0(sıfır) dan başlar */
 
-        //Ülke-Başkent şeklinde verileri yazdırın
+
+        /** Ülke-Başkent şeklinde verileri yazdırın */
         for (int i = 0; i < workbook.getSheet("Sheet1").getPhysicalNumberOfRows(); i++) {
             for (int j = 0; j < workbook.getSheet("Sheet1").getRow(0).getPhysicalNumberOfCells(); j++) {
                 System.out.print(workbook.getSheet("Sheet1").getRow(i).getCell(j)+"\t");
@@ -79,12 +83,4 @@ public class C02_ExcelRead extends TestBase {
             System.out.println();
         }
     }
-
-
-
-
-
-
-
-
 }
