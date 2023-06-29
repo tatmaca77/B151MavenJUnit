@@ -20,7 +20,7 @@ public class Trainning extends TestBase {
     //arama kutusunda iphone aratalım
     //sonuc yazısinı konsola yazdıralım
 
-    /*
+    /**
     Extent Reports dedigimde aklima ilk gelen 3 Class'tir.
     1-Extent Reports  2- Extent Html Reporter  3- Extent Test
      */
