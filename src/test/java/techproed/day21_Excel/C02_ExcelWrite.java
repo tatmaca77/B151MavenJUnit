@@ -1,0 +1,40 @@
+package techproed.day21_Excel;
+
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.junit.Test;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class C02_ExcelWrite {
+
+
+    @Test
+    public void excelWriteTest01() throws IOException {
+
+        // Bir Nüfus Sütunu olusturunuz.
+        String filePath = "src/test/java/resources/Capitals.xlsx"; //1.ADIM
+        FileInputStream fis = new FileInputStream(filePath); // 2.ADIM
+        Workbook workbook = WorkbookFactory.create(fis); // 3.ADIM
+
+        workbook.getSheet("Sheet1").getRow(0).createCell(2).setCellValue("Nüfus");
+        /**
+        Excel Tables'da bir Hücre yani Sütun olusturmak icin "createCell" kullanilir.
+        Hücre icine yazdirmak istedigimiz deger icin "setCellValue" methodu kullanilir.
+         */
+
+        FileOutputStream fos = new FileOutputStream(filePath);
+        /**
+        Datalari bizim Classimizdan Capitals yani Excel icine göndermek icin "FileOutputStream" objesi olusturulur.
+         */
+
+        workbook.write(fos);
+        /**
+        workbook'taki datalari "fos" icine yazmis olduk.
+         */
+
+    }
+}

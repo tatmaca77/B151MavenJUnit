@@ -95,6 +95,7 @@ public class C01_ExcelRead {
 
 
         /** First Step */
+        //Dosya yolunu String'e assign etmeliyiz.
         String filePath = "src/test/java/resources/Capitals.xlsx";
 
 
@@ -108,7 +109,7 @@ public class C01_ExcelRead {
         Workbook workbook = WorkbookFactory.create(fis);
 
 
-        /**For loop öncesinde i nereye kadar gitmeli sorusunun cevabi olarak son satir sayisini bulduk */
+        /**For loop öncesinde "i" nereye kadar gitmeli sorusunun cevabi olarak son satir sayisini bulduk */
         int lastRowNumber = workbook.getSheet("Sheet1").getLastRowNum();
         System.out.println("Son Satir Sayisi : " + lastRowNumber);
 
@@ -119,6 +120,8 @@ public class C01_ExcelRead {
             String value = workbook.getSheet("Sheet1").getRow(i).getCell(1).toString();
 
             capitalsMap.put(key, value);
+
+            //System.out.println(key + "=" + value);
         }
         System.out.println("Tüm Veriler : " + capitalsMap);
 
