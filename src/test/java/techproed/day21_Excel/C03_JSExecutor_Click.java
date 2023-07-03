@@ -47,13 +47,7 @@ public class C03_JSExecutor_Click extends TestBase {
         //     JavascriptExecutor js = (JavascriptExecutor) driver;
         //     js.executeScript("arguments[0].click();",returns);
 
-
         click(returns); // ==> Reuasable method yaptik. TestBase'den gelir. !!!!
-
-
-
-
-
 
     }
 }
