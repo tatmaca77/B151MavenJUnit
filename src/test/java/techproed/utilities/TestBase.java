@@ -236,7 +236,7 @@ public class TestBase {
 
     }
 
-    public void click(WebElement element){
+    public void jsClick(WebElement element){
         try {
             element.click();
         } catch (Exception e) {
