@@ -18,4 +18,27 @@ public class C02_ExcelRead {
    kayarız.
     */
 
+    @Test
+    public void readExcelTest01() throws IOException {
+        /*
+        // 3. satir 1. sütun degerini yazdirin France Test
+        // Excel File Path
+         */
+
+        /** Excel'deki 3 banko Adim asagidaki gibidir. */
+
+        /** First Step */
+        String filePath = "src/test/java/resources/Capitals.xlsx";
+
+
+        /** Second Step */
+        // Capital Files input etmeliyiz. Sistemimize getirmeliyiz.
+        FileInputStream fis = new FileInputStream(filePath);  // Dosyayi okuyabilmemiz icin akisa almaliyiz. Stream ile.
+
+
+        /** Third Step */
+        // Dosyayi Workbook'a atamaliyiz. JAVA ortaminda bir Excel dosyasi olusturmaliyiz.
+        Workbook workbook = WorkbookFactory.create(fis);
+    }
 }
+
