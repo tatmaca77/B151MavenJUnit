@@ -44,15 +44,10 @@ public class C01_ExcelRead {
 
 
 
-
-
         /** getSheet("Sheet1") ==> Sag alt kösede sayfanin ismi yazar bunu belirtmis oluruz. */
         /** getRow(2) ==> index kullanarak 3.satirdaki veriyi aldik */
         /** getCell(0); ==> index kullanarak 1.sütunualdik */
         /** toString(); ==> String'e cevirdim ve assign ettim hata gitti. */
-
-
-
 
 
 
