@@ -1,0 +1,49 @@
+
+
+Excel’in Yapisi
+
+➢ Excel icin daha once inceledigimiz Web Table yapisina
+benzer bir yapi vardir.
+
+➢ Excel’de bir hucredeki bilgiye ulasmak icin
+dosya/sayfa/satir/sutun sirasiyla ilerlemeliyiz
+
+➢ Excel ile ilgili otomasyonda web table’da oldugu gibi sutun
+y a p i s i y o k t u r, i h t i y a c d u y a r s a k s a t i r v e h ü c r e
+combinasyonuysa sutunlara gidebiliriz
+
+Workbook excel dosyamiz
+Sheet Her açık excel sekmesi (Sheet1, Sheet2, etc)
+
+Row(satir) Java, yalnızca içeride veri varsa satırları sayar.
+
+Default olarak, Java perspektifinden satır sayısı 0'dır
+
+Cell (hucre) Java her satıra bakar ve yalnızca hücrede veri
+varsa hücre sayısını sayar.
+
+★Workbook > Worksheet > Row > Cell
+
+
+
+Excel Okuma ( Excel Read ) :
+
+*Excelden veriyi okumak icin hangi sırayla gitmem gerekir
+ --> workbook > sheet > row > cell
+*Bir exceldeki toplam satir sayısı nasıl bulunur?
+--> getLastROwNumber
+Yada
+--> getPhysicalNumberOfRows- toplam kullanılan satir sayısı
+
+
+Excel Yazdırma ( Excel Write ) :
+
+--> Microsoft dosyalari ile iletişime gecmek icin apache poi dependency’s kullanılır.
+
+** Su anki projende exceli nasil kullandin?
+
+--> Test caselerimde çeşitli datalar kullanıyorum. Ornegin kullanıcı adi, kullanıcı şifresi gibi dataları
+excelde tutuyoruz. Bu datalari test caselerde kullanmak icin excelden çekiyorum ve test
+caselerimde kullanıyorum.
+Datalari excelde tutmanı faydası, dataların derli toplu bir yerde olması, data güvenliği, data
+kayıplarına engel olmak.
