@@ -33,12 +33,5 @@ public class C02_Training {
 
         workbook.write(fos);
 
-
-
-
-
-
-
-
     }
 }
