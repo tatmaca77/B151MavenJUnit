@@ -53,5 +53,7 @@ public class C02_ExcelWrite {
         workbook'taki datalari "fos" icine yazmis olduk.
          */
 
+        fos.close();
+        workbook.close();
     }
 }
