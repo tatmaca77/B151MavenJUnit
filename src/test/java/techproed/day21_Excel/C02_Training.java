@@ -14,7 +14,7 @@ public class C02_Training {
     @Test
     public void excelWrite() throws IOException {
         /**
-         // Bir "Nüfus" sütunu olusturun
+         // Bir "Nüfus Artis" sütunu olusturun
          // baskent nufuslarını excel dosyasına yazınız.
          // (D.C: 1000, Paris:1100, London:1200, Ankara:1300)
          */
