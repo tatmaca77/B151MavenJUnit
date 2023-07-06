@@ -46,7 +46,11 @@ public class C03_JSExecutor_Click extends TestBase {
         //     JavascriptExecutor js = (JavascriptExecutor) driver;
         //     js.executeScript("arguments[0].click();",returns);
 
-        jsClick(returns); // ==> Reuasable method yaptik. TestBase'den gelir. !!!!
+        jsClick(returns); // ==> Reasable method yaptik. TestBase'den gelir. !!!!
+
 
     }
 }
+/* SORU
+        // https://www.mercedes-benz.com.tr/?group=all&subgroup=see-all&view=BODYTYPE sayfasına git çerezleri kabul et
+         */

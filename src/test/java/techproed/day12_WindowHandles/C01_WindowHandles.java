@@ -63,7 +63,7 @@ public class C01_WindowHandles extends TestBase {
         /** Burda sayfalarin handle degerleri ayni bu yüzden islem yapariz. */
         Set<String> windowHandleSet = driver.getWindowHandles();
         System.out.println(windowHandleSet);
-                            /**getWindowHandles ile acilan tüm sekmelerin handle deferlerini Set olarak getirir. */
+                            /**getWindowHandles ile acilan tüm sekmelerin handle degerlerini Set olarak getirir. */
         String sayfa2Handle = "";
         for (String w : windowHandleSet) {
             if (!w.equals(sayfa1Handle)){
