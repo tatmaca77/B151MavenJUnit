@@ -284,5 +284,11 @@ public class TestBase {
         js.executeScript("arguments[0].setAttribute('"+attribute+"','"+text+"')",element);
     }
 
+    //JS getAttribute() Methodu  --> Metnin rengini kirmizi yapan Method
+    public void jsGetAttributeColor(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.color='red';",element);
+    }
+
 }
 
