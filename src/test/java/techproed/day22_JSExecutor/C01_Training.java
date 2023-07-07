@@ -82,6 +82,42 @@ public class C01_Training extends TestBase {
         js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
         bekle(2);
 
+    }
+
+
+    /**
+    Github sayfasina git.
+   Sayfanin en altina git ve ekran görüntüsü al
+   Sayfanin en üstüne git ve prfil fotografinin ekran görüntüsünü al
+   Repositories'e tikla
+   Acilan sayfada "Batch151_Selenium_Practice" görünene kadar scroll yap ve ekran görüntüsü al.
+
+     NOTE : TestBase icindeki methodlari kullanarak kod blogu olustur.
+     */
+
+    @Test
+    public void test02() {
+        driver.get("https://github.com/tatmaca77");
+
+        scrollEnd();
+        tumSayfaResmi();
+
+        bekle(2);
+
+        scrollHome();
+        WebElement photo = driver.findElement(By.xpath("//img[contains(@class,'avatar avatar-user')]"));
+        webElementResmi(photo);
+
+        bekle(2);
+
+        driver.findElement(By.xpath("(//a[contains(@class,'UnderlineNav-item js-responsive-underlinenav-item')])[2]")).click();
+
+        WebElement element = driver.findElement(By.xpath("//a[@href='/tatmaca77/Batch151_Selenium_Practice']"));
+        jsScrollWE(element);
+        tumSayfaResmi();
+
+        bekle(2);
+
 
     }
 }
